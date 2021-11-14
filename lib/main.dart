@@ -1,5 +1,5 @@
 import 'package:brace_mate/size.config.dart';
-import 'package:brace_mate/src/screens/home_page.dart';
+import 'package:brace_mate/src/screens/braces_page.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -28,6 +28,24 @@ class _MyAppState extends State<MyApp> {
           },
         );
       },
+    );
+  }
+}
+
+class HomePage extends StatelessWidget {
+  const HomePage({Key? key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      body: Center(
+        child: ElevatedButton(
+          child: Text('Go to Braces Screen'),
+          onPressed: () {
+            Navigator.of(context).push(MaterialPageRoute(builder: (context) => BracesScreen()));
+          },
+        ),
+      ),
     );
   }
 }

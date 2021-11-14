@@ -5,7 +5,7 @@ import '../../size.config.dart';
 
 class SVGColorGrid extends StatelessWidget {
   final _colorMap = {
-    'xd.#ff0000': Colors.transparent,
+    'initial.#ff0000': Colors.transparent,
     'Red.#ff0000': Colors.red,
     'Green.#00FF00:': Colors.green,
     'Blue.#0000FF': Colors.blue,
@@ -18,17 +18,7 @@ class SVGColorGrid extends StatelessWidget {
     'White.#FFFFFF:black': Colors.white,
     'Black1.#000000:': Colors.black,
     'Bla2ck1.#000000:': Colors.black,
-    'Bl2ack1.#000000:': Colors.black,
-    'Bl21ack1.#000000:': Colors.black,
-    'Bla21ck1.#000000:': Colors.black,
-    'Bla2c4k1.#000000:': Colors.black,
-    'Bla2c3k1.#000000:': Colors.black,
-    'Bl2a2ck1.#000000:': Colors.black,
-    'Bla12ck1.#000000:': Colors.black,
-    'Bl24a2ck1.#000000:': Colors.black,
-    'Bl324a2ck1.#000000:': Colors.black,
-    'Bl246a2ck1.#000000:': Colors.black,
-    'Bl254a2ck1.#000000:': Colors.black,
+    //to add colors just replace the hex code with the wanted color then add the value to colorize the container in the grid
   };
 
   final Function(String) onColorSelected;
@@ -46,9 +36,9 @@ class SVGColorGrid extends StatelessWidget {
           mainAxisSpacing: getProportionateScreenWidth(3)),
       children: [
         ..._colorMap.entries.map((MapEntry<String, Color> mapEntry) {
-          if (mapEntry.key == 'xd.#ff0000')
+          if (mapEntry.key == 'initial.#ff0000')
             return GestureDetector(
-              onTap: () => onColorSelected("x.#bdd4de"),
+              onTap: () => onColorSelected("initial.#bdd4de"),
               child: Container(
                   height: getProportionateScreenWidth(100),
                   width: getProportionateScreenWidth(100),

@@ -13,14 +13,14 @@ import 'package:screenshot/screenshot.dart';
 import 'package:share_plus/share_plus.dart';
 import '../../size.config.dart';
 
-class HomePage extends StatefulWidget {
-  const HomePage({Key? key}) : super(key: key);
+class BracesScreen extends StatefulWidget {
+  const BracesScreen({Key? key}) : super(key: key);
 
   @override
-  _HomePageState createState() => _HomePageState();
+  _BracesScreenState createState() => _BracesScreenState();
 }
 
-class _HomePageState extends State<HomePage> {
+class _BracesScreenState extends State<BracesScreen> {
   final controller = ScreenshotController();
   List<String> svgColorCodes = List.filled(20, '#default.#bdd4de');
   List<String> visibles = List.filled(20, 'hidden');
@@ -67,6 +67,7 @@ class _HomePageState extends State<HomePage> {
                     visibles[i] = 'hidden';
                   }
                 });
+                await Future.delayed(Duration(seconds: 1));
 
                 final image = await controller.capture();
                 if (image == null) return;
@@ -83,7 +84,7 @@ class _HomePageState extends State<HomePage> {
               },
               child: Padding(
                 padding: EdgeInsets.all(getProportionateScreenWidth(8)),
-                child: Icon(Icons.add),
+                child: Icon(Icons.save_alt),
               )),
           GestureDetector(
               onTap: () async {
@@ -92,6 +93,8 @@ class _HomePageState extends State<HomePage> {
                     visibles[i] = 'hidden';
                   }
                 });
+                await Future.delayed(Duration(seconds: 1));
+
                 final image = await controller.capture();
                 if (image == null) return;
                 await saveAnadShareImage(image);
@@ -798,7 +801,7 @@ class _HomePageState extends State<HomePage> {
               padding: EdgeInsets.symmetric(horizontal: getProportionateScreenWidth(10)),
               child: SVGColorGrid(
                 onColorSelected: (color) {
-                  if (color == "x.#bdd4de") {
+                  if (color == "initial.#bdd4de") {
                     setState(() {
                       for (var i = 0; i < visibles.length; i++) {
                         visibles[i] = 'hidden';
