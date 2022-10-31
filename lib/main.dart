@@ -22,30 +22,12 @@ class _MyAppState extends State<MyApp> {
 
             return MaterialApp(
               title: 'Brace Mate',
-              home: HomePage(),
+              home: BracesScreen(),
               debugShowCheckedModeBanner: false,
             );
           },
         );
       },
-    );
-  }
-}
-
-class HomePage extends StatelessWidget {
-  const HomePage({Key? key}) : super(key: key);
-
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      body: Center(
-        child: ElevatedButton(
-          child: Text('Go to Braces Screen'),
-          onPressed: () {
-            Navigator.of(context).push(MaterialPageRoute(builder: (context) => BracesScreen()));
-          },
-        ),
-      ),
     );
   }
 }
